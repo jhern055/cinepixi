@@ -1,0 +1,117 @@
+
+ #cssmenu_navBar {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans-Serif;
+  font-size: 18px;
+  line-height: 15px;
+  text-transform: uppercase;
+  text-align: left;
+   margin-left: 0%; /*to get over 10%*-fixed now*/
+
+
+ }
+
+#cssmenu_navBar > ul {
+  width: auto;
+  list-style-type: none;
+  padding-left: 10%;
+  margin-left: 0;
+  background: #222222;
+ border-bottom: 5px solid #6ec919;
+ /*fix border whole way*/
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+
+ }
+
+#cssmenu_navBar > ul li#responsive-tab {
+  display: none;
+  /* Hide for large screens */
+
+}
+
+#cssmenu_navBar > ul li {
+ display: inline-block;
+ *display: inline;
+  zoom: 1;
+ margin-right: 0px;/**/
+ margin-left: -5px;/* get rid of tiny space between items*/
+ padding-left: 0px;/**/
+}
+
+#cssmenu_navBar > ul li.right {
+ float: right;
+}
+
+#cssmenu_navBar > ul li.has-sub {
+ position: relative;
+
+}
+#cssmenu_navBar > ul li.has-sub:hover ul {
+ display: block;
+ }
+
+#cssmenu_navBar > ul li.has-sub ul {
+ display: none;
+ width: 250px;
+ position: absolute;
+ margin: 0px;
+ padding: 0px;
+ list-style-type: none;
+ background: #222222;
+ /*border: 1px solid #6ec919;
+  /* fix for best---border-left: 2px solid #6ec919; */
+  border-bottom: 5px solid #6ec919; /* or 5 to match above*/
+  border-top: 0 none;
+  font-size: 14px;
+ }
+ #cssmenu_navBar > ul li.has-sub ul li {
+  display: block;
+  }
+
+
+ #cssmenu_navBar > ul li.quote a {
+
+  color: #6ec919;
+ }
+
+ #cssmenu_navBar > ul li.has-sub > a {
+  background-image: url('images/caret.png');
+  background-repeat: no-repeat;
+  background-position: 90% -95%;
+  }
+
+ #cssmenu_navBar > ul li.has-sub > a.active,
+ #cssmenu_navBar > ul li.has-sub > a:hover {
+  background: #6ec919 url('images/caret.png') no-repeat;
+  background-position: 90% 195%;
+  }
+
+ #cssmenu_navBar > ul li a {
+  display: block;
+  padding: 12px 24px 11px 24px;
+  text-decoration: none;
+ color: #ffffff;
+
+ }
+
+
+
+ /*active on hover below */
+#cssmenu_navBar > ul li.active{
+ background: #6ec919;
+ color: #fff;
+}
+
+ #cssmenu_navBar > ul li.active a:hover{
+
+  color: #000;
+ }
+ /*above*/
+
+
+ #cssmenu_navBar > ul li a:hover {
+  background: #6ec919;
+  color: #fff;
+ }

@@ -1,0 +1,671 @@
+{
+
+    "type":"object",
+	"required":true,
+	"additionalProperties":false,
+    "properties": {
+
+        "version": {
+            "type":"string",
+            "required":true,
+			"minLength":1,
+			"enum":["2.2"]
+        },
+        "serie": {
+            "type":"string",
+            "required":false,
+			"minLength":1
+        },
+        "folio": {
+            "type":"string",
+            "required":true,
+			"minLength":1
+        },
+        "fecha": {
+            "type":"string",
+            "required":true,
+			"minLength":1
+        },
+        "sello": {
+            "type":"string",
+            "required":false,
+			"minLength":1
+        },
+        "noAprobacion": {
+            "type":"string",
+            "required":true,
+			"minLength":1
+        },
+        "anoAprobacion": {
+            "type":"string",
+            "required":true,
+			"minLength":1
+        },
+        "formaDePago": {
+            "type":"string",
+            "required":true,
+			"minLength":1
+        },
+        "noCertificado": {
+            "type":"string",
+            "required":false,
+			"minLength":1
+        },
+        "certificado": {
+            "type":"string",
+            "required":false,
+			"minLength":1
+        },
+        "condicionesDePago": {
+            "type":"string",
+            "required":false,
+			"minLength":1
+        },
+        "subTotal": {
+            "type":"number",
+            "required":true
+        },
+        "descuento": {
+            "type":"number",
+            "required":false
+        },
+        "motivoDescuento": {
+            "type":"string",
+            "required":false,
+			"minLength":1
+        },
+        "tipoCambio": {
+            "type":"string",
+            "required":false,
+			"minLength":1
+        },
+        "Moneda": {
+            "type":"string",
+            "required":false,
+			"minLength":1
+        },
+        "total": {
+            "type":"number",
+            "required":true
+        },
+        "tipoDeComprobante": {
+            "type":"string",
+            "required":true,
+			"minLength":1
+        },
+        "metodoDePago": {
+            "type":"string",
+            "required":true,
+			"minLength":1
+        },
+        "LugarExpedicion": {
+            "type":"string",
+            "required":true,
+			"minLength":1
+        },
+        "NumCtaPago": {
+            "type":"string",
+            "required":false,
+			"minLength":1
+        },
+        "FolioFiscalOrig": {
+            "type":"string",
+            "required":false,
+			"minLength":1
+        },
+        "SerieFolioFiscalOrig": {
+            "type":"string",
+            "required":false,
+			"minLength":1
+        },
+        "FechaFolioFiscalOrig": {
+            "type":"string",
+            "required":false,
+			"minLength":1
+        },
+        "MontoFolioFiscalOrig": {
+            "type":"number",
+            "required":false
+        },
+		"Emisor":{
+
+			"type":"object",
+			"required":true,
+			"additionalProperties":false,
+			"properties": {
+
+				"rfc": {
+					"type":"string",
+					"required":true,
+					"minLength":1
+				},
+				"nombre": {
+					"type":"string",
+					"required":false,
+					"minLength":1
+				},
+				"DomicilioFiscal": {
+
+					"type":"object",
+					"required":false,
+					"additionalProperties":false,
+					"properties": {
+
+						"calle": {
+							"type":"string",
+							"required":true,
+							"minLength":1
+						},
+						"noExterior": {
+							"type":"string",
+							"required":false,
+							"minLength":1
+						},
+						"noInterior": {
+							"type":"string",
+							"required":false,
+							"minLength":1
+						},
+						"colonia": {
+							"type":"string",
+							"required":false,
+							"minLength":1
+						},
+						"localidad": {
+							"type":"string",
+							"required":false,
+							"minLength":1
+						},
+						"referencia": {
+							"type":"string",
+							"required":false,
+							"minLength":1
+						},
+						"municipio": {
+							"type":"string",
+							"required":true,
+							"minLength":1
+						},
+						"estado": {
+							"type":"string",
+							"required":true,
+							"minLength":1
+						},
+						"pais": {
+							"type":"string",
+							"required":true,
+							"minLength":1
+						},
+						"codigoPostal": {
+							"type":"string",
+							"required":true,
+							"minLength":1
+						}
+
+					}
+
+				},
+				"ExpedidoEn": {
+
+					"type":"object",
+					"required":false,
+					"additionalProperties":false,
+					"properties": {
+
+						"calle": {
+							"type":"string",
+							"required":false,
+							"minLength":1
+						},
+						"noExterior": {
+							"type":"string",
+							"required":false,
+							"minLength":1
+						},
+						"noInterior": {
+							"type":"string",
+							"required":false,
+							"minLength":1
+						},
+						"colonia": {
+							"type":"string",
+							"required":false,
+							"minLength":1
+						},
+						"localidad": {
+							"type":"string",
+							"required":false,
+							"minLength":1
+						},
+						"referencia": {
+							"type":"string",
+							"required":false,
+							"minLength":1
+						},
+						"municipio": {
+							"type":"string",
+							"required":false,
+							"minLength":1
+						},
+						"estado": {
+							"type":"string",
+							"required":false,
+							"minLength":1
+						},
+						"pais": {
+							"type":"string",
+							"required":true,
+							"minLength":1
+						},
+						"codigoPostal": {
+							"type":"string",
+							"required":false,
+							"minLength":1
+						}
+
+					}
+
+				},
+				"RegimenFiscal":{
+
+					"type":"array",
+					"required":true,
+					"additionalProperties":false,
+					"items": {
+
+						"type":"object",
+						"required":true,
+						"additionalProperties":false,
+						"properties": {
+
+							"Regimen": {
+								"type":"string",
+								"required":true,
+								"minLength":1
+							}
+
+						}
+
+					},
+					"minItems":1
+
+				}
+
+			}
+
+		},
+		"Receptor":{
+
+			"type":"object",
+			"required":true,
+			"additionalProperties":false,
+			"properties": {
+
+				"rfc": {
+					"type":"string",
+					"required":true,
+					"minLength":1
+				},
+				"nombre": {
+					"type":"string",
+					"required":false,
+					"minLength":1
+				},
+				"Domicilio": {
+
+					"type":"object",
+					"required":false,
+					"additionalProperties":false,
+					"properties": {
+
+						"calle": {
+							"type":"string",
+							"required":false,
+							"minLength":1
+						},
+						"noExterior": {
+							"type":"string",
+							"required":false,
+							"minLength":1
+						},
+						"noInterior": {
+							"type":"string",
+							"required":false,
+							"minLength":1
+						},
+						"colonia": {
+							"type":"string",
+							"required":false,
+							"minLength":1
+						},
+						"localidad": {
+							"type":"string",
+							"required":false,
+							"minLength":1
+						},
+						"referencia": {
+							"type":"string",
+							"required":false,
+							"minLength":1
+						},
+						"municipio": {
+							"type":"string",
+							"required":false,
+							"minLength":1
+						},
+						"estado": {
+							"type":"string",
+							"required":false,
+							"minLength":1
+						},
+						"pais": {
+							"type":"string",
+							"required":true,
+							"minLength":1
+						},
+						"codigoPostal": {
+							"type":"string",
+							"required":false,
+							"minLength":1
+						}
+
+					}
+
+				}
+
+			}
+
+		},
+		"Conceptos":{
+
+			"type":"object",
+			"required":true,
+			"additionalProperties":false,
+			"properties":{
+
+				"Concepto": {
+
+					"type":"array",
+					"required":true,
+					"items":{
+
+						"type":"object",
+						"required":true,
+						"additionalProperties":false,
+						"properties":{
+
+							"cantidad": {
+								"type":"number",
+								"required":true
+							},
+							"unidad": {
+								"type":"string",
+								"required":true,
+								"minLength":1
+							},
+							"noIdentificacion": {
+								"type":"string",
+								"required":false,
+								"minLength":1
+							},
+							"descripcion": {
+								"type":"string",
+								"required":true,
+								"minLength":1
+							},
+							"valorUnitario": {
+								"type":"number",
+								"required":true
+							},
+							"importe": {
+								"type":"number",
+								"required":true
+							},
+							"InformacionAduanera": {
+
+								"type":"array",
+								"required":false,
+								"items": {
+
+									"type":"object",
+									"required":false,
+									"additionalProperties":false,
+									"properties":{
+
+										"numero": {
+											"type":"number",
+											"required":true
+										},
+										"fecha": {
+											"type":"string",
+											"required":true,
+											"minLength":1
+										},
+										"aduana": {
+											"type":"string",
+											"required":false,
+											"minLength":1
+										}
+
+									}
+
+								}
+
+							},
+							"CuentaPredial": {
+
+								"type":"object",
+								"required":false,
+								"additionalProperties":false,
+								"properties": {
+
+									"numero": {
+										"type":"string",
+										"required":true,
+										"minLength":1
+									}
+
+								}
+
+							},
+							"ComplementoConcepto": {
+
+								"type":"any",
+								"required":false
+
+							},
+							"Parte": {
+
+								"type":"array",
+								"required":false,
+								"items":{
+
+									"type":"object",
+									"required":false,
+									"additionalProperties":false,
+									"properties":{
+
+										"cantidad": {
+											"type":"number",
+											"required":true
+										},
+										"unidad": {
+											"type":"string",
+											"required":false,
+											"minLength":1
+										},
+										"noIdentificacion": {
+											"type":"string",
+											"required":false,
+											"minLength":1
+										},
+										"descripcion": {
+											"type":"string",
+											"required":true,
+											"minLength":1
+										},
+										"valorUnitario": {
+											"type":"number",
+											"required":false
+										},
+										"importe": {
+											"type":"number",
+											"required":false
+										},
+										"InformacionAduanera": {
+
+											"type":"array",
+											"required":false,
+											"items": {
+
+												"type":"object",
+												"required":false,
+												"additionalProperties":false,
+												"properties":{
+
+													"numero": {
+														"type":"number",
+														"required":true
+													},
+													"fecha": {
+														"type":"string",
+														"required":true,
+														"minLength":1
+													},
+													"aduana": {
+														"type":"string",
+														"required":false,
+														"minLength":1
+													}
+
+												}
+
+											}
+
+										}
+
+									}
+
+								}
+
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+		},
+		"Impuestos": {
+
+			"type":"object",
+			"required":true,
+			"additionalProperties":false,
+			"properties": {
+
+				"totalImpuestosRetenidos": {
+					"type":"number",
+					"required":false
+				},
+				"totalImpuestosTrasladados": {
+					"type":"number",
+					"required":false
+				},
+				"Retenciones":{
+
+					"type":"object",
+					"required":false,
+					"additionalProperties":false,
+					"properties":{
+
+						"Retencion": {
+
+							"type":"array",
+							"required":false,
+							"items":{
+
+								"type":"object",
+								"required":false,
+								"additionalProperties":false,
+								"properties":{
+
+									"impuesto": {
+										"type":"string",
+										"required":true,
+										"minLength":1
+									},
+									"importe": {
+										"type":"number",
+										"required":true
+									}
+
+								}
+
+							}
+
+						}
+
+					}
+
+				},
+				"Traslados":{
+
+					"type":"object",
+					"required":false,
+					"additionalProperties":false,
+					"properties":{
+
+						"Traslado": {
+
+							"type":"array",
+							"required":false,
+							"items":{
+
+								"type":"object",
+								"required":false,
+								"additionalProperties":false,
+								"properties":{
+
+									"impuesto": {
+										"type":"string",
+										"required":true,
+										"minLength":1
+									},
+									"tasa": {
+										"type":"string",
+										"required":true,
+										"minLength":1
+									},
+									"importe": {
+										"type":"number",
+										"required":true
+									}
+
+								}
+
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+		},
+        "Complemento": {
+            "type":"any",
+            "required":false
+        },
+        "Addenda": {
+            "type":"any",
+            "required":false
+        }
+
+	}
+
+}

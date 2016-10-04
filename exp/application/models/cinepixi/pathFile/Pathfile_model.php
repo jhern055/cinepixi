@@ -43,6 +43,8 @@ class Pathfile_model extends CI_Model{
     $this->db->select('id');
     $this->db->from('cinepixi_pathFile');
 
+    $this->db->where("parentid",0);
+
     if(!empty($query_search))
     foreach ($query_search as $k => $row)
     eval($row);
@@ -156,12 +158,12 @@ class Pathfile_model extends CI_Model{
         // $menu_html.='<script type="text/javascript" src="'.base_url().'css/dynamic_menu_favorite/script.js"></script>';
         // $menu_html.=$this->load->buildMenu(0, $menu);
 
+        // $data[$key]["menu_html"]=$this->load->buildMenu(0, $menu);
         $data[$key]["menu_html"]=$this->load->buildMenu($value["parentid"], $menu);
            
     }
 
 // <own >
-
 
     // pr($menu_html);
 // </own >

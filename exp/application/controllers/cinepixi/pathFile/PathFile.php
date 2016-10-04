@@ -194,6 +194,11 @@ class PathFIle extends CI_Controller {
 	$data["module_data"]["module_data_method_do_it"]="cinepixi/pathFile/pathFileView/";
 
     $data["modules_quick"]=$this->load->get_back_access($module);
+	
+	// < own >
+	$data["menu_css"]='<link rel="stylesheet" type="text/css" href="'.base_url().'css/dynamic_menu_favorite/styles.css" />';
+	$data["menu_css"].='<script type="text/javascript" src="'.base_url().'css/dynamic_menu_favorite/script.js"></script>';
+	// </ own >
 
 	$html=$this->load->view("cinepixi/pathFile/ajax/table-pathFile-view",$data,true);
 	$data["html"]=$html;
@@ -201,7 +206,7 @@ class PathFIle extends CI_Controller {
 	// $this->session->set_userdata('record_start_row_pathFile',$this->page);
 
 	if(!empty($_GET["ajax"]))
-	echo $data["html"];
+	echo $data["html"].$data["menu_css"]; /*</ own >*/
 	else
 	return $data;
 

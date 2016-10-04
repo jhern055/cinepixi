@@ -10,7 +10,6 @@
                 <th >Nombre</th>
             </thead>
             <tbody>
-
             <?php if(!empty($records_array)): ?>  
             <?php foreach($records_array as $rows): ?> 
 

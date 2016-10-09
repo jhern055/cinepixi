@@ -159,7 +159,7 @@ class Pathfile_model extends CI_Model{
         // $menu_html.=$this->load->buildMenu(0, $menu);
 
         // $data[$key]["menu_html"]=$this->load->buildMenu(0, $menu);
-        $data[$key]["menu_html"]=$this->load->buildMenu($value["parentid"], $menu);
+        $data[$key]["menu_html"]=$this->load->buildMenuFile($value["parentid"], $menu);
            
     }
 

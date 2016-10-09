@@ -436,6 +436,66 @@ class MY_Loader extends CI_Loader {
         return $modules_quick;
     }
     // </LinkinModule>    
+
+    public function buildMenuFile($parent, $menu,$pathFather=null) {
+    $CI =& get_instance();
+    $CI->load->model("vars_system_model");
+    $sys=$CI->vars_system_model->_vars_system();
+    $CI->load->helper('load_controller');
+    $dir="/opt/cinepixi/files";
+
+    $html = "";
+
+    if (isset($menu['parent_menus'][$parent])) {
+        $html .= '<ul class="nav" id="side-menu">';
+
+        foreach ($menu['parent_menus'][$parent] as $menu_id) {
+            $controller=explode("/", substr($menu['menus'][$menu_id]['link'],0, -1));
+
+            if (!isset($menu['parent_menus'][$menu_id])) {
+            $ext = pathinfo($menu['menus'][$menu_id]['name'], PATHINFO_EXTENSION);
+                if($ext=="mp3"){
+                // $html .= "<li data-id_menu='".encode_id($menu_id) ."'>";
+                $html .= "<li>";
+                // $html .= "<a id='a_menu_click' class='a_menu' href=javascript:void(0); data-href=".substr($menu['menus'][$menu_id]['link'],0, -1).">";
+                $html .= "<a class='a_menu' href=javascript:void(0);>";
+                $html  .= "<span class='module_text'>"
+                            . $menu['menus'][$menu_id]['name'] ."
+                            </span>
+                            <audio controls>
+                            <source src='http://cinepixi.com".$pathFather."/".$menu['menus'][$menu_id]['name']."' type='audio/mpeg'>
+                            </audio>
+
+                            </a>";
+
+                $html .="</li>";
+                }
+            }
+
+            if (isset($menu['parent_menus'][$menu_id])) {
+
+                // $html .= "<li class='has-sub' data-id_menu='".encode_id($menu_id) ."'>";
+                $html .= "<li class='has-sub'>";
+                // $html .=  "<a id='a_menu_click' class='a_sub_menu' href=".base_url().$menu['menus'][$menu_id]['link']." data-href=".substr($menu['menus'][$menu_id]['link'],0, -1).">";
+                $html .=  "<a class='a_sub_menu' href=javascript:void(0);>";
+                $html .= "  <span style='margin-left: -10px; margin-right: -10px;' class='icon_menu ".(!empty($menu['menus'][$menu_id]['class'])?$menu['menus'][$menu_id]['class']:"")."' ></span>
+                            <span class='module_text'>
+                            ".$menu['menus'][$menu_id]['name']."
+                            </span>
+                            </a>";
+                
+                $html .= $this->buildMenuFile($menu_id, $menu,$menu['menus'][$menu_id]['link']);
+
+                $html .= "</li>";
+            }
+        }
+
+        $html .= "</ul>";
+    }
+    
+    return $html;
+
+    }    
 }
 
  ?>

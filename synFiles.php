@@ -40,7 +40,7 @@
     } 
 
     function sync_PATHS($dir,$parentid=0,$last_path) { 
-$dir_clean="/opt/cinepixi/files";
+$dir_clean="/media/dell/67F18E800D673AB3/1-Musica";
         
         $k=array();
         global $obj;
@@ -111,7 +111,7 @@ $dir_clean="/opt/cinepixi/files";
 // $dir="/media/dell/67F18E800D673AB3/tmp_nueva";
 // $dir="/media/dell/67F18E800D673AB3/tmp_nueva";
 // $dir="/media/dell/67F18E800D673AB3/1-Musica";
-$dir="/opt/cinepixi/files";
+$dir="/media/dell/67F18E800D673AB3/1-Musica";
     
 $last_path=explode("/",$dir);
 // example /DATA
